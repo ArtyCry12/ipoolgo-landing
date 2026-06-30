@@ -44,7 +44,10 @@ function playTone(
 
 export function AudioProvider({ children }: { children: ReactNode }) {
   const [muted, setMuted] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  });
   const ctxRef = useRef<globalThis.AudioContext | null>(null);
   const ambientRef = useRef<OscillatorNode | null>(null);
   const ambientGainRef = useRef<GainNode | null>(null);
@@ -53,7 +56,6 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
     const onChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
     mq.addEventListener("change", onChange);
 

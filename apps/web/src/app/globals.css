@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --ocean-950: #03045e;
+  --ocean-800: #023e8a;
+  --ocean-600: #0077b6;
+  --ocean-500: #0096c7;
+  --ocean-400: #00b4d8;
+  --ocean-300: #48cae4;
+  --ocean-200: #90e0ef;
+  --ocean-100: #ade8f4;
+  --ocean-50: #caf0f8;
+  --accent-lime: #b8ff3c;
+  --background: #03045e;
+  --foreground: #caf0f8;
+}
+
+@theme inline {
+  --color-ocean-950: var(--ocean-950);
+  --color-ocean-800: var(--ocean-800);
+  --color-ocean-600: var(--ocean-600);
+  --color-ocean-500: var(--ocean-500);
+  --color-ocean-400: var(--ocean-400);
+  --color-ocean-300: var(--ocean-300);
+  --color-ocean-200: var(--ocean-200);
+  --color-ocean-100: var(--ocean-100);
+  --color-ocean-50: var(--ocean-50);
+  --color-accent-lime: var(--accent-lime);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--ocean-950);
+  color: var(--ocean-50);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-manrope), sans-serif;
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0, 180, 216, 0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(72, 202, 228, 0.25), transparent),
+    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(2, 62, 138, 0.5), transparent),
+    linear-gradient(180deg, var(--ocean-950) 0%, #023e8a 50%, var(--ocean-950) 100%);
+}
+
+.glass-card {
+  background: rgba(173, 232, 244, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(144, 224, 239, 0.2);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--ocean-50) 0%, var(--ocean-300) 50%, var(--accent-lime) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes ripple {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.animate-ripple {
+  animation: ripple 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-ripple,
+  .animate-float {
+    animation: none;
+  }
+}

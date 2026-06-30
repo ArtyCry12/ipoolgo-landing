@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "title": "IPOOLGO — Piscine premium Drop Stitch | Moldova & România",
+    "description": "Piscine gonflabile premium IPOOLGO cu tehnologie Drop Stitch. Livrare în Moldova și România. Consultație gratuită."
+  },
+  "nav": {
+    "home": "Acasă",
+    "catalog": "Catalog",
+    "gallery": "Galerie",
+    "about": "Despre noi",
+    "reviews": "Recenzii",
+    "faq": "Întrebări",
+    "contact": "Contact",
+    "cta": "Consultație gratuită"
+  },
+  "hero": {
+    "badge": "100% Original Drop Stitch",
+    "title": "Apa premium la tine acasă",
+    "subtitle": "Piscine și cadă cu hidromasaj IPOOLGO — tehnologie Drop Stitch, borduri rigide 500 kg, durată 8 ani.",
+    "ctaPrimary": "Sună acum",
+    "ctaSecondary": "Vezi catalogul",
+    "scroll": "Derulează"
+  },
+  "marquee": {
+    "items": ["DROP STITCH", "500 KG BORD", "8 ANI", "PREMIUM PVC", "MOLDOVA", "ROMÂNIA", "IPOOLGO®"]
+  },
+  "originality": {
+    "title": "100% produs original",
+    "p1": "Pe piața bazinelor gonflabile e ușor să te pierzi: multe modele arată identic, dar designul similar nu garantează originalitatea.",
+    "p2": "Majoritatea ofertelor sunt replici și contrafăcute, create fără control al calității.",
+    "p3": "Noi ne specializăm exclusiv pe produse originale, fabricate sub controlul nostru direct. Fiecare cusătură, strat de material și logo — pe echipament de fabrică propriu.",
+    "p4": "Avem toate certificatele și licențele necesare pentru siguranță și fiabilitate."
+  },
+  "benefits": {
+    "title": "Avantaje incontestabile",
+    "items": [
+      "Borduri gonflabile rigide",
+      "Sarcină pe bord — 500 kg",
+      "Rezistență termică -20°…+80°C",
+      "Durată de viață — 8 ani",
+      "Filtrare și încălzire",
+      "Rezistent la UV",
+      "Poate fi îngropat",
+      "Montaj și mutare ușoare"
+    ]
+  },
+  "materials": {
+    "title": "Materiale",
+    "text": "Produsele IPOOLGO sunt fabricate din PVC premium. Bazinul devine mai ușor, rezistent la UV și uzură. Nu își pierde culoarea și nu îngălbenește."
+  },
+  "technology": {
+    "title": "Tehnologie Drop Stitch",
+    "text": "Spațiul dintre pereții bazinului e umplut cu mii de fire nylon care formează o rețea — oferind rezistență și elasticitate ridicate.",
+    "diagramLabel": "Straturi Drop Stitch"
+  },
+  "accessories": {
+    "title": "Accesorii",
+    "items": ["Pompă electrică", "Sistem de filtrare", "Scară (clasică sau gonflabilă)", "Pompă de căldură", "Acoperiș gonflabil"]
+  },
+  "products": {
+    "title": "Modele flagship",
+    "subtitle": "Dimensiuni populare — consultați pentru disponibilitate",
+    "cta": "Solicită consultație",
+    "specs": "Specificații"
+  },
+  "reviews": {
+    "title": "Recenzii clienți",
+    "subtitle": "Feedback real de la familii care folosesc IPOOLGO",
+    "cta": "Toate recenziile"
+  },
+  "cta": {
+    "title": "Gata să începi?",
+    "subtitle": "Scrie-ne pe Telegram, WhatsApp sau Viber — răspundem rapid",
+    "call": "Sună",
+    "write": "Scrie"
+  },
+  "catalog": {
+    "title": "Catalog produse",
+    "subtitle": "Piscine premium, cupe de gheață, jacuzzi și accesorii — fără prețuri online, doar consultație personalizată",
+    "consult": "Consultați",
+    "noPrice": "Preț la cerere"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Fotografii de la clienții noștri — imaginați-vă bazinul în curtea dvs."
+  },
+  "about": {
+    "title": "Despre IPOOLGO",
+    "subtitle": "Producție premium: piscine SUP și cupe de gheață",
+    "wholesale": "Clienți en-gros",
+    "wholesaleText": "Interesat de colaborare? Oferim livrări IPOOLGO la prețuri en-gros. Contactați-ne."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Întrebări? Scrieți-ne — răspundem rapid",
+    "formName": "Nume",
+    "formPhone": "Telefon",
+    "formProduct": "Produs de interes",
+    "formMessage": "Mesaj",
+    "formSubmit": "Trimite cererea",
+    "formSuccess": "Mulțumim! Vă contactăm în curând.",
+    "email": "Email"
+  },
+  "faq": {
+    "title": "Întrebări frecvente"
+  },
+  "legal": {
+    "privacy": "Confidențialitate",
+    "terms": "Termeni",
+    "delivery": "Livrare & returnări"
+  },
+  "footer": {
+    "tagline": "Piscine premium Drop Stitch — Moldova & România",
+    "rights": "© IPOOLGO. Toate drepturile rezervate."
+  },
+  "loader": {
+    "skip": "Sari peste",
+    "loading": "IPOOLGO"
+  },
+  "audio": {
+    "mute": "Sunet oprit",
+    "unmute": "Pornește sunetul"
+  },
+  "categories": {
+    "pool-round": "Piscină rotundă",
+    "pool-rectangle": "Piscină dreptunghiulară",
+    "pool-inground-rectangle": "Piscină îngropată dreptunghiulară",
+    "ice-bath": "Cupe de gheață",
+    "bubble": "Cadă pentru bebeluși",
+    "onsen": "Jacuzzi cu aeromassaj",
+    "settee": "Canapea gonflabilă",
+    "bergere": "Fotoliu gonflabil",
+    "clamshell": "Șezlong gonflabil",
+    "surface": "Masă gonflabilă",
+    "pontoon": "Plută gonflabilă",
+    "tray": "Tavă plutitoare",
+    "slope": "Scară-glide gonflabilă",
+    "buckler": "Acoperiș rotund",
+    "buckler-square": "Acoperiș dreptunghiular",
+    "ladder-regular": "Scară",
+    "ladder-inflatable": "Scară gonflabilă",
+    "filter-sandy": "Filtru de nisip",
+    "pump-electro": "Pompă electrică",
+    "pump-heat": "Pompă de căldură",
+    "verro": "Robot aspirator VERRO"
+  }
+}

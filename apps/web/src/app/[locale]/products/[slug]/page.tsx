@@ -30,7 +30,7 @@ export default async function ProductPage({
         data={{
           name: `IPOOLGO ${dims}`,
           description: t("subtitle"),
-          image: `${SITE_URL}${product.image}`,
+          image: `${SITE_URL}${product.cardImage}`,
         }}
       />
       <div className="px-4 pb-24 pt-28 md:px-8">
@@ -40,14 +40,17 @@ export default async function ProductPage({
           </Link>
           <div className="mt-8 grid gap-12 lg:grid-cols-2">
             <FadeInView>
-              <div className="relative aspect-square rounded-3xl bg-white/5">
-                <Image
-                  src={product.image}
-                  alt={`IPOOLGO ${dims}`}
-                  fill
-                  className="object-contain p-8"
-                  priority
-                />
+              <div className="product-card overflow-hidden rounded-3xl border border-ocean-400/15 bg-[#FAFBFC] shadow-xl">
+                <div className="h-1 w-full bg-gradient-to-r from-accent-lime via-ocean-300 to-ocean-500" />
+                <div className="relative aspect-square bg-gradient-to-b from-white to-ocean-50/30">
+                  <Image
+                    src={product.cardImage}
+                    alt={`IPOOLGO ${dims}`}
+                    fill
+                    className="object-contain p-8"
+                    priority
+                  />
+                </div>
               </div>
             </FadeInView>
             <FadeInView delay={0.1}>

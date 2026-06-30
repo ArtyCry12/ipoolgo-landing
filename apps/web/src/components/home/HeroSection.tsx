@@ -22,29 +22,42 @@ export function HeroSection() {
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden gradient-mesh px-4 pt-24">
       <WaterHero3D />
 
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-32 top-1/4 h-64 w-64 rounded-full bg-accent-lime/10 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 bottom-1/3 h-72 w-72 rounded-full bg-ocean-400/15 blur-3xl"
+      />
+
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-ocean-950/20 to-ocean-950" />
 
       <motion.div
-        className="relative z-10 max-w-4xl text-center"
+        className="relative z-10 max-w-5xl text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="mb-4 inline-block rounded-full border border-accent-lime/40 bg-ocean-800/50 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-accent-lime">
+        <span className="mb-6 inline-block rounded-full border border-accent-lime/50 bg-ocean-800/60 px-5 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent-lime shadow-lg shadow-accent-lime/10">
           {t("badge")}
         </span>
-        <h1 className="font-display text-5xl font-bold leading-tight text-gradient md:text-7xl lg:text-8xl">
+        <h1 className="font-display text-5xl font-bold leading-[1.05] text-gradient md:text-7xl lg:text-[5.5rem]">
           {t("title")}
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-ocean-100/90 md:text-xl">
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ocean-100/90 md:text-xl">
           {t("subtitle")}
         </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <a href={`tel:${CONTACT.phone}`}>
-            <Button variant="primary">{t("ctaPrimary")}</Button>
+            <Button variant="primary" className="min-w-[180px]">
+              {t("ctaPrimary")}
+            </Button>
           </a>
           <Link href="/catalog" onClick={() => playWhoosh()}>
-            <Button variant="secondary">{t("ctaSecondary")}</Button>
+            <Button variant="secondary" className="min-w-[180px]">
+              {t("ctaSecondary")}
+            </Button>
           </Link>
         </div>
       </motion.div>

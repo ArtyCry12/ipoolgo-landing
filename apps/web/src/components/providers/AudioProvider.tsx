@@ -16,6 +16,7 @@ type AudioContextValue = {
   playClick: () => void;
   playSplash: () => void;
   playWhoosh: () => void;
+  onIntroComplete: () => void;
 };
 
 const AudioCtx = createContext<AudioContextValue | null>(null);
@@ -27,7 +28,8 @@ function playTone(
   type: OscillatorType = "sine",
   volume = 0.08,
 ) {
-  if (!ctx || ctx.state === "suspended") return;
+  if (!ctx) return;
+  if (ctx.state === "suspended") void ctx.resume();
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
   osc.type = type;
@@ -41,66 +43,101 @@ function playTone(
 }
 
 export function AudioProvider({ children }: { children: ReactNode }) {
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
   const ctxRef = useRef<globalThis.AudioContext | null>(null);
   const ambientRef = useRef<OscillatorNode | null>(null);
   const ambientGainRef = useRef<GainNode | null>(null);
+  const introDoneRef = useRef(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", onChange);
+
     ctxRef.current = new AudioContext();
+    const resumeOnInteraction = () => {
+      void ctxRef.current?.resume();
+    };
+    window.addEventListener("pointerdown", resumeOnInteraction, { once: true });
+    window.addEventListener("keydown", resumeOnInteraction, { once: true });
+
     return () => {
+      mq.removeEventListener("change", onChange);
+      window.removeEventListener("pointerdown", resumeOnInteraction);
+      window.removeEventListener("keydown", resumeOnInteraction);
+      ambientRef.current?.stop();
       void ctxRef.current?.close();
     };
   }, []);
 
-  const startAmbient = useCallback(() => {
-    const ctx = ctxRef.current;
-    if (!ctx || ambientRef.current) return;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = "sine";
-    osc.frequency.value = 220;
-    gain.gain.value = 0.015;
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start();
-    ambientRef.current = osc;
-    ambientGainRef.current = gain;
+  const stopAmbient = useCallback(() => {
+    ambientRef.current?.stop();
+    ambientRef.current = null;
+    ambientGainRef.current = null;
   }, []);
 
-  const toggleMute = useCallback(() => {
-    setMuted((m) => {
-      const next = !m;
+  const startAmbient = useCallback(
+    (fadeIn = false) => {
       const ctx = ctxRef.current;
-      if (!ctx) return next;
-      if (next) {
-        void ctx.suspend();
-        ambientRef.current?.stop();
-        ambientRef.current = null;
-      } else {
-        void ctx.resume();
-        startAmbient();
+      if (!ctx || reducedMotion || muted || ambientRef.current) return;
+      void ctx.resume();
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.value = 220;
+      const targetVol = 0.015;
+      gain.gain.value = fadeIn ? 0 : targetVol;
+      if (fadeIn) {
+        gain.gain.linearRampToValueAtTime(targetVol, ctx.currentTime + 1.2);
       }
-      return next;
-    });
-  }, [startAmbient]);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      ambientRef.current = osc;
+      ambientGainRef.current = gain;
+    },
+    [muted, reducedMotion],
+  );
+
+  useEffect(() => {
+    if (muted || reducedMotion) {
+      stopAmbient();
+      void ctxRef.current?.suspend();
+    } else if (introDoneRef.current) {
+      startAmbient();
+    } else {
+      void ctxRef.current?.resume();
+    }
+  }, [muted, reducedMotion, startAmbient, stopAmbient]);
+
+  const onIntroComplete = useCallback(() => {
+    introDoneRef.current = true;
+    if (!muted && !reducedMotion) {
+      startAmbient(true);
+    }
+  }, [muted, reducedMotion, startAmbient]);
+
+  const toggleMute = useCallback(() => {
+    setMuted((m) => !m);
+  }, []);
 
   const playClick = useCallback(() => {
-    if (muted) return;
     playTone(ctxRef.current, 880, 0.06, "triangle", 0.05);
-  }, [muted]);
+  }, []);
 
   const playSplash = useCallback(() => {
-    if (muted) return;
     playTone(ctxRef.current, 440, 0.15, "sine", 0.06);
     setTimeout(() => playTone(ctxRef.current, 330, 0.2, "sine", 0.04), 50);
-  }, [muted]);
+  }, []);
 
   const playWhoosh = useCallback(() => {
-    if (muted) return;
     const ctx = ctxRef.current;
     if (!ctx) return;
+    if (ctx.state === "suspended") void ctx.resume();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.frequency.setValueAtTime(600, ctx.currentTime);
@@ -111,10 +148,12 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     gain.connect(ctx.destination);
     osc.start();
     osc.stop(ctx.currentTime + 0.2);
-  }, [muted]);
+  }, []);
 
   return (
-    <AudioCtx.Provider value={{ muted, toggleMute, playClick, playSplash, playWhoosh }}>
+    <AudioCtx.Provider
+      value={{ muted, toggleMute, playClick, playSplash, playWhoosh, onIntroComplete }}
+    >
       {children}
     </AudioCtx.Provider>
   );

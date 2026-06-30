@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { flagshipProducts } from "@/data/products";
 import { FadeInView } from "@/components/motion/FadeInView";
 import { Button } from "@/components/ui/Button";
+import { ProductCard } from "@/components/ui/ProductCard";
 import { CONTACT } from "@/lib/constants";
 
 export function ProductCarousel() {
@@ -25,38 +25,20 @@ export function ProductCarousel() {
           {flagshipProducts.map((product, i) => (
             <motion.div
               key={product.slug}
-              className="glass-card w-72 shrink-0 snap-center overflow-hidden rounded-3xl md:w-80"
+              className="w-72 shrink-0 snap-center md:w-80"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -8, scale: 1.02 }}
             >
               <Link href={`/products/${product.slug}`}>
-                <div className="relative aspect-square bg-white/5">
-                  <Image
-                    src={product.image}
-                    alt={`IPOOLGO ${product.dimensions[locale]}`}
-                    fill
-                    className="object-contain p-4"
-                    sizes="320px"
-                  />
-                </div>
-                <div className="p-5">
-                  <p className="font-display text-lg font-bold text-ocean-50">
-                    IPOOLGO {product.dimensions[locale]}
-                  </p>
-                  <div className="mt-2 flex flex-wrap gap-1">
-                    {product.specs.map((s) => (
-                      <span
-                        key={s}
-                        className="rounded bg-ocean-600/30 px-2 py-0.5 text-xs text-ocean-200"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <ProductCard
+                  slug={product.slug}
+                  title={`IPOOLGO ${product.dimensions[locale]}`}
+                  cardImage={product.cardImage}
+                  image={product.image}
+                  specs={product.specs}
+                />
               </Link>
             </motion.div>
           ))}

@@ -43,7 +43,7 @@ export function BenefitsSection() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => (
             <FadeInView key={item} delay={i * 0.05}>
-              <div className="glass-card group rounded-2xl p-6 transition-all hover:border-ocean-300/50 hover:shadow-lg hover:shadow-ocean-400/10">
+              <div className="glass-card group rounded-2xl border-l-4 border-l-transparent p-6 transition-all hover:border-l-accent-lime hover:border-ocean-300/50 hover:shadow-lg hover:shadow-ocean-400/10">
                 <span className="font-display text-2xl font-bold text-accent-lime">
                   {String(i + 1).padStart(2, "0")}
                 </span>

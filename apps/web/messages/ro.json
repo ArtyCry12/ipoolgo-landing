@@ -99,6 +99,7 @@
     "formMessage": "Mesaj",
     "formSubmit": "Trimite cererea",
     "formSuccess": "Mulțumim! Vă contactăm în curând.",
+    "formError": "Nu am putut trimite cererea. Încercați din nou sau sunați-ne.",
     "email": "Email"
   },
   "faq": {

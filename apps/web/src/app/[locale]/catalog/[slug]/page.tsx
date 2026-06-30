@@ -1,12 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCategory } from "@/data/categories";
 import { flagshipProducts } from "@/data/products";
 import { Link } from "@/i18n/navigation";
 import { CONTACT } from "@/lib/constants";
 import { FadeInView } from "@/components/motion/FadeInView";
+import { ProductCard } from "@/components/ui/ProductCard";
 
 export default async function CategoryPage({
   params,
@@ -21,6 +21,7 @@ export default async function CategoryPage({
   if (!category) notFound();
 
   const related = flagshipProducts.filter((p) => p.categorySlug === slug);
+  const loc = locale as "ro" | "ru";
 
   return (
     <div className="px-4 pb-24 pt-28 md:px-8">
@@ -36,18 +37,14 @@ export default async function CategoryPage({
         {related.length > 0 && (
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/products/${p.slug}`}
-                className="glass-card overflow-hidden rounded-2xl"
-              >
-                <div className="relative aspect-square bg-white/5">
-                  <Image src={p.image} alt={p.slug} fill className="object-contain p-4" />
-                </div>
-                <div className="p-4">
-                  <p className="font-semibold">IPOOLGO {p.dimensions[locale as "ro" | "ru"]}</p>
-                  <p className="text-sm text-ocean-400">{t("noPrice")}</p>
-                </div>
+              <Link key={p.slug} href={`/products/${p.slug}`}>
+                <ProductCard
+                  slug={p.slug}
+                  title={`IPOOLGO ${p.dimensions[loc]}`}
+                  cardImage={p.cardImage}
+                  image={p.image}
+                  specs={p.specs}
+                />
               </Link>
             ))}
           </div>

@@ -5,12 +5,12 @@ export type Category = {
 };
 
 export const categories: Category[] = [
-  { slug: "pool-round", icon: "⭕", image: "/products/ipoolgo-6x15.webp" },
-  { slug: "pool-rectangle", icon: "▭", image: "/products/ipoolgo-3x2x12.webp" },
+  { slug: "pool-round", icon: "⭕", image: "/products/ipoolgo-6x15.png" },
+  { slug: "pool-rectangle", icon: "▭", image: "/products/ipoolgo-3x2x12.png" },
   { slug: "pool-inground-rectangle", icon: "⬛" },
   { slug: "ice-bath", icon: "❄️" },
   { slug: "bubble", icon: "👶" },
-  { slug: "onsen", icon: "💆", image: "/products/ipoolgo-24x1.webp" },
+  { slug: "onsen", icon: "💆", image: "/products/ipoolgo-24x1.png" },
   { slug: "settee", icon: "🛋️" },
   { slug: "bergere", icon: "💺" },
   { slug: "clamshell", icon: "🪑" },

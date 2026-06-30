@@ -1,19 +1,38 @@
 {
-  "version": 1,
+  "version": 2,
   "products": {
-    "ipoolgo-67x11": { "local": "/products/ipoolgo-67x11.webp", "sha": "flagship-1" },
-    "ipoolgo-24x1": { "local": "/products/ipoolgo-24x1.webp", "sha": "flagship-2" },
-    "ipoolgo-64x13": { "local": "/products/ipoolgo-64x13.webp", "sha": "flagship-3" },
-    "ipoolgo-6x15": { "local": "/products/ipoolgo-6x15.webp", "sha": "flagship-4" },
-    "ipoolgo-3x2x12": { "local": "/products/ipoolgo-3x2x12.webp", "sha": "flagship-5" },
-    "ipoolgo-6x1": { "local": "/products/ipoolgo-6x1.webp", "sha": "flagship-6" },
-    "ipoolgo-5x15": { "local": "/products/ipoolgo-5x15.webp", "sha": "flagship-7" },
-    "ipoolgo-7x12": { "local": "/products/ipoolgo-7x12.webp", "sha": "flagship-8" }
+    "ipoolgo-67x11": {
+      "local": "/products/ipoolgo-67x11.png",
+      "card": "/products/cards/ipoolgo-67x11-card.png"
+    },
+    "ipoolgo-24x1": {
+      "local": "/products/ipoolgo-24x1.png",
+      "card": "/products/cards/ipoolgo-24x1-card.png"
+    },
+    "ipoolgo-64x13": {
+      "local": "/products/ipoolgo-64x13.png",
+      "card": "/products/cards/ipoolgo-64x13-card.png"
+    },
+    "ipoolgo-6x15": {
+      "local": "/products/ipoolgo-6x15.png",
+      "card": "/products/cards/ipoolgo-6x15-card.png"
+    },
+    "ipoolgo-3x2x12": {
+      "local": "/products/ipoolgo-3x2x12.png",
+      "card": "/products/cards/ipoolgo-3x2x12-card.png"
+    },
+    "ipoolgo-6x1": {
+      "local": "/products/ipoolgo-6x1.png",
+      "card": "/products/cards/ipoolgo-6x1-card.png"
+    },
+    "ipoolgo-5x15": {
+      "local": "/products/ipoolgo-5x15.png",
+      "card": "/products/cards/ipoolgo-5x15-card.png"
+    },
+    "ipoolgo-7x12": {
+      "local": "/products/ipoolgo-7x12.png",
+      "card": "/products/cards/ipoolgo-7x12-card.png"
+    }
   },
-  "audio": {
-    "ambient": "/audio/ambient-water.mp3",
-    "click": "/audio/sfx-click.mp3",
-    "splash": "/audio/sfx-splash.mp3",
-    "whoosh": "/audio/sfx-whoosh.mp3"
-  }
+  "cards": {}
 }

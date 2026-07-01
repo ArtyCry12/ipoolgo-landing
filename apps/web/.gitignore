@@ -37,6 +37,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Stitch MCP local test preview (do not commit)
+/public/stitch-test/
+/src/app/stitch-test/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

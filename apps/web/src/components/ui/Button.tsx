@@ -25,9 +25,9 @@ export function Button({
         "relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition-all duration-300",
         "hover:scale-105 active:scale-95",
         variant === "primary" &&
-          "bg-gradient-to-r from-ocean-500 to-ocean-400 text-ocean-950 shadow-lg shadow-ocean-400/30",
+          "bg-accent-lime text-brand-deep shadow-lg shadow-accent-lime/30 hover:shadow-accent-lime/50",
         variant === "secondary" &&
-          "border border-ocean-300/40 bg-ocean-800/60 text-ocean-50 backdrop-blur",
+          "glass-panel border border-white/20 text-white hover:bg-white/10",
         variant === "ghost" && "text-ocean-200 hover:text-ocean-50",
         className,
       )}

@@ -59,7 +59,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="glass-card space-y-4 rounded-3xl p-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="glass-panel space-y-4 rounded-3xl p-8">
       <input
         type="text"
         tabIndex={-1}
@@ -72,7 +72,7 @@ export function ContactForm() {
         <label className="mb-1 block text-sm text-ocean-200">{t("formName")}</label>
         <input
           {...register("name")}
-          className="w-full rounded-xl border border-ocean-400/30 bg-ocean-950/60 px-4 py-3 text-ocean-50 outline-none focus:border-ocean-300"
+          className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white outline-none focus:border-accent-lime"
         />
         {errors.name && <p className="mt-1 text-xs text-red-400">Required</p>}
       </div>
@@ -81,7 +81,7 @@ export function ContactForm() {
         <input
           {...register("phone")}
           type="tel"
-          className="w-full rounded-xl border border-ocean-400/30 bg-ocean-950/60 px-4 py-3 text-ocean-50 outline-none focus:border-ocean-300"
+          className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white outline-none focus:border-accent-lime"
         />
         {errors.phone && <p className="mt-1 text-xs text-red-400">Required</p>}
       </div>
@@ -89,7 +89,7 @@ export function ContactForm() {
         <label className="mb-1 block text-sm text-ocean-200">{t("formProduct")}</label>
         <input
           {...register("product")}
-          className="w-full rounded-xl border border-ocean-400/30 bg-ocean-950/60 px-4 py-3 text-ocean-50 outline-none focus:border-ocean-300"
+          className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white outline-none focus:border-accent-lime"
         />
       </div>
       <div>
@@ -97,7 +97,7 @@ export function ContactForm() {
         <textarea
           {...register("message")}
           rows={4}
-          className="w-full rounded-xl border border-ocean-400/30 bg-ocean-950/60 px-4 py-3 text-ocean-50 outline-none focus:border-ocean-300"
+          className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white outline-none focus:border-accent-lime"
         />
       </div>
       {error && <p className="text-sm text-red-400">{error}</p>}

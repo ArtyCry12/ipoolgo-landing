@@ -4,7 +4,6 @@ export const CONTACT = {
   phoneLocal: "079689028",
   telegram: "saletoe",
   telegramUrl: "https://t.me/saletoe",
-  viberUrl: "viber://chat?number=%2B37379689028",
   whatsappUrl: "https://wa.me/37379689028",
   email: "ipoolgoo@mail.ru",
 } as const;

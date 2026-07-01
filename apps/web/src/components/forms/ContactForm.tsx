@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useTranslations, useLocale } from "next-intl";
 import { Button } from "@/components/ui/Button";
-import { useAudio } from "@/components/providers/AudioProvider";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -21,7 +20,6 @@ type FormData = z.infer<typeof schema>;
 export function ContactForm() {
   const t = useTranslations("contact");
   const locale = useLocale();
-  const { playSplash } = useAudio();
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const {
@@ -32,7 +30,6 @@ export function ContactForm() {
 
   async function onSubmit(data: FormData) {
     setError(null);
-    playSplash();
     try {
       const res = await fetch("/api/contact", {
         method: "POST",

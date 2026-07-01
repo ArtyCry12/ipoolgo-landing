@@ -18,8 +18,6 @@ import { MessengerFab } from "@/components/layout/MessengerFab";
 
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 
-import { AudioProvider } from "@/components/providers/AudioProvider";
-
 import { JsonLd } from "@/components/seo/JsonLd";
 
 import "../globals.css";
@@ -133,23 +131,12 @@ export default async function LocaleLayout({
       <body className="min-h-full font-sans antialiased selection:bg-accent-lime selection:text-brand-deep">
 
         <NextIntlClientProvider messages={messages}>
-
-          <AudioProvider>
-
-            <SmoothScrollProvider>
-
-              <Header />
-
-              <main className="min-h-screen">{children}</main>
-
-              <Footer />
-
-              <MessengerFab />
-
-            </SmoothScrollProvider>
-
-          </AudioProvider>
-
+          <SmoothScrollProvider>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <MessengerFab />
+          </SmoothScrollProvider>
         </NextIntlClientProvider>
 
       </body>

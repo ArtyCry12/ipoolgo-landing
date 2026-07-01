@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useAudio } from "@/components/providers/AudioProvider";
 import { type ButtonHTMLAttributes, type ReactNode } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -13,11 +12,8 @@ export function Button({
   variant = "primary",
   className,
   children,
-  onClick,
   ...props
 }: ButtonProps) {
-  const { playClick } = useAudio();
-
   return (
     <button
       type="button"
@@ -31,10 +27,6 @@ export function Button({
         variant === "ghost" && "text-ocean-200 hover:text-ocean-50",
         className,
       )}
-      onClick={(e) => {
-        playClick();
-        onClick?.(e);
-      }}
       {...props}
     >
       {children}

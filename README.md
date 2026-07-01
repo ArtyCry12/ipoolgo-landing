@@ -7,8 +7,7 @@ Premium Drop Stitch pool landing for Moldova & Romania (RO + RU).
 - Next.js 16 App Router
 - next-intl (ro default, ru)
 - Framer Motion + GSAP + Lenis
-- React Three Fiber (hero)
-- Web Audio API (ambient + SFX, auto-start with mute toggle)
+- Stitch WebGL hero shader
 
 ## Quick start
 

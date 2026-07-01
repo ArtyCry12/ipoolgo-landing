@@ -12,8 +12,8 @@ export const faqItems: FaqItem[] = [
       ru: "Что такое SUP-бассейн (Drop Stitch)?",
     },
     a: {
-      ro: "Este un bazin gonflabil premium cu tehnologie Drop Stitch: mii de fire nylon conectează pereții interiori, oferind rigiditate, rezistență la 500 kg pe bord și durată de viață de 8 ani.",
-      ru: "Это премиальный надувной бассейн с технологией Drop Stitch: тысячи нейлоновых нитей соединяют внутренние стенки, обеспечивая жёсткость, нагрузку 500 кг на борт и срок службы 8 лет.",
+      ro: "Este un bazin gonflabil premium cu tehnologie Drop Stitch: mii de fire nylon conectează pereții interiori, oferind rigiditate, bord care suportă până la 500 kg, rezistență −20°…+80°C și durată de 8 ani.",
+      ru: "Это премиальный надувной бассейн с технологией Drop Stitch: тысячи нейлоновых нитей соединяют внутренние стенки, борт выдерживает до 500 кг, термостойкость −20°…+80°C и срок службы 8 лет.",
     },
   },
   {

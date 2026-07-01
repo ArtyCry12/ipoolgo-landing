@@ -15,14 +15,14 @@
   },
   "hero": {
     "badge": "100% Original Drop Stitch",
-    "title": "Apa premium la tine acasă",
-    "subtitle": "Piscine și cadă cu hidromasaj IPOOLGO — tehnologie Drop Stitch, borduri rigide 500 kg, durată 8 ani.",
+    "title": "Piscine premium la preț accesibil",
+    "subtitle": "Tehnologie Drop Stitch, rezistență −20°…+80°C — pot fi folosite și ca cadă rece.",
     "ctaPrimary": "Sună acum",
     "ctaSecondary": "Vezi catalogul",
     "scroll": "Derulează"
   },
   "marquee": {
-    "items": ["DROP STITCH", "500 KG BORD", "8 ANI", "PREMIUM PVC", "MOLDOVA", "ROMÂNIA", "IPOOLGO®"]
+    "items": ["DROP STITCH", "−20°C", "8 ANI", "PREMIUM PVC", "CADĂ RECE", "MOLDOVA", "ROMÂNIA", "IPOOLGO®"]
   },
   "originality": {
     "title": "100% produs original",
@@ -33,9 +33,13 @@
   },
   "benefits": {
     "title": "Avantaje incontestabile",
+    "plungeNote": "Ideal și ca cadă rece — termorezistent de la −20°C",
+    "statCold": "Min temp",
+    "statLife": "Durată",
+    "statHot": "Max temp",
     "items": [
       "Borduri gonflabile rigide",
-      "Sarcină pe bord — 500 kg",
+      "Bordul suportă până la 500 kg",
       "Rezistență termică -20°…+80°C",
       "Durată de viață — 8 ani",
       "Filtrare și încălzire",
@@ -58,10 +62,11 @@
     "items": ["Pompă electrică", "Sistem de filtrare", "Scară (clasică sau gonflabilă)", "Pompă de căldură", "Acoperiș gonflabil"]
   },
   "products": {
-    "title": "Modele flagship",
-    "subtitle": "Dimensiuni populare — consultați pentru disponibilitate",
+    "title": "Modele populare",
+    "subtitle": "Assortiment nkids.md — 14 produse, consultați pentru disponibilitate",
     "cta": "Solicită consultație",
-    "specs": "Specificații"
+    "specs": "Specificații",
+    "plungeHint": "Poate fi folosit și ca cadă rece (cupă de apă rece)"
   },
   "reviews": {
     "title": "Recenzii clienți",
@@ -70,7 +75,7 @@
   },
   "cta": {
     "title": "Gata să începi?",
-    "subtitle": "Scrie-ne pe Telegram, WhatsApp sau Viber — răspundem rapid",
+    "subtitle": "Scrie-ne pe Telegram sau WhatsApp — răspundem rapid",
     "call": "Sună",
     "write": "Scrie"
   },
@@ -78,7 +83,9 @@
     "title": "Catalog produse",
     "subtitle": "Piscine premium, cupe de gheață, jacuzzi și accesorii — fără prețuri online, doar consultație personalizată",
     "consult": "Consultați",
-    "noPrice": "Preț la cerere"
+    "noPrice": "Preț la cerere",
+    "allProducts": "Tot assortimentul",
+    "emptyCategory": "Nu există produse în această categorie momentan."
   },
   "gallery": {
     "title": "Galerie",
@@ -123,6 +130,7 @@
     "unmute": "Pornește sunetul"
   },
   "categories": {
+    "all": "Toate",
     "pool-round": "Piscină rotundă",
     "pool-rectangle": "Piscină dreptunghiulară",
     "pool-inground-rectangle": "Piscină îngropată dreptunghiulară",
